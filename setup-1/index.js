@@ -11,7 +11,7 @@ import express from 'express' ;
 import ejsLayouts from 'express-ejs-layouts' ;
 
 /** Importing internal modules: - Only those functions and classes which are required */
-import ProductController from './src/controllers/product.controller.js';
+import {ProductController} from './src/controllers/product.controller.js';
 import { validateRequest } from './src/middlewares/validation.middleware.js';
 
 /** Importing core modules */
@@ -42,14 +42,10 @@ server.use(express.urlencoded({extended: true})) ;
 const productController = new ProductController(); 
 
 server.get('/', productController.getProducts);
-
 server.get('/new', productController.getAddForm);
-
 server.post('/',validateRequest, productController.addnewProduct);
-
 server.get('/update-product/:id', productController.getUpdateProductView );
 server.post('/delete-product/:id',productController.deleteProduct) ;
-
 server.post('/update-product',validateRequest, productController.postUpdateProduct);
 /********************************************************************************************************* */
 /**
