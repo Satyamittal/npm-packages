@@ -1,4 +1,4 @@
 
-# All information related to packges
+# Setup Folders and files
 
-All my custom npm-packages, are placed here.
+All my setup files and folders

@@ -1,0 +1,27 @@
+{
+  "name": "npm-1",
+  "version": "0.0.0",
+  "description": "This is my first npm package. This is used to simplify process of making web-development",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Satyamittal/npm-packages.git"
+  },
+  "author": "Satyam Mittal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Satyamittal/npm-packages/issues"
+  },
+  "homepage": "https://github.com/Satyamittal/npm-packages#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "express-ejs-layouts": "^2.5.1",
+    "express-validator": "^7.0.1"
+  }
+}
