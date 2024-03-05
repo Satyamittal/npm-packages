@@ -1,5 +1,7 @@
 /**
  * models are used to update the data in views
+ * 
+ * Determines , how our data look like.
  */
 export default class ProductModel{
 
@@ -15,11 +17,6 @@ export default class ProductModel{
     static get(){
         return products;
     }
-    static add(newProduct)
-    {
-      newProduct.id = products.length + 1 ;
-      products.push(newProduct) ;
-    }
     static getById(id){
       return products.find(p=> p.id == id) ;
     }
@@ -28,11 +25,7 @@ export default class ProductModel{
       const index = products.findIndex(p => p.id == productObj.id) ;
       products[index] = productObj ;
     }
-    static delete(id)
-    {
-      const index = products.findIndex( p=> p.id == id) ;
-      products.splice(index,1);
-    }
+
 }
 
 /** Without using data-base */

@@ -39,16 +39,17 @@ export const validateRequest = async (req,res,next) =>
 
 // step-1  setup rules for validation
 const rules = [
+    /**body('input name value').function().function()......... */
     body('name').notEmpty().withMessage('Name is required') ,
     body('price').isFloat({gt:0}).withMessage("price should be a positive value"),
     body('imageUrl').isURL().withMessage('Invalid Url') ,
 ]
+
 // step-2  run those rules
 await Promise.all(rules.map(rule=>rule.run(req)));
 
-// step-3 check if there are any errors after running the rules
+// step-3 check if there are any errors after running the rules . If yes sent those error's
 var validationErrors = validationResult(req) ;
-console.log(validationErrors );
 
     if (!validationErrors.isEmpty()) {
         // console.log("abcd") ;

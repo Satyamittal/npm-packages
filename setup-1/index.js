@@ -6,13 +6,27 @@
  *          Inlclude modules....
  */
 
-/** Importing external modules */
+/** Importing external modules like following */
 import express from 'express' ;
 import ejsLayouts from 'express-ejs-layouts' ;
 
-/** Importing internal modules: - Only those functions and classes which are required */
-import {ProductController} from './src/controllers/product.controller.js';
-import { validateRequest } from './src/middlewares/validation.middleware.js';
+/** Importing internal modules: Named and Default imports */
+
+/** Named Imports: - import {class or Function Name} from './src/controllers/product.controller.js';
+ *         1) We can import muliple entities seprated by commas , similarly export multiple inside curly braces
+ *         2) Cannot change the name of imported object.Can be used as exactly
+ * 
+ * Default Imports:- import validateRequest  from './src/middlewares/validation.middleware.js';
+ *         1) We can import or export only single default object, without any curly braces. Can be used as exactly
+ *         2) can change the name like : -  import renamed from './file' 
+*/
+/** Write your code Here */
+
+
+
+
+
+
 
 /** Importing core modules */
 import path from 'path' ;
@@ -23,7 +37,7 @@ import path from 'path' ;
  *         Setting up path of views(dynamic content), so that we don't have to write absolute path again and again
  *         and using ejs-layouts for common layout of the website. Such that we don't have to write redundant code again n again.
  *         Setting up path of static files
- *         Parsing the form data , because it sent in encoded form.
+ *         Parsing the form data , because it sent in encoded form. Form Data is placed in "req.body"
  */
 
 const server = express() ;
@@ -38,15 +52,26 @@ server.use(express.urlencoded({extended: true})) ;
  *       Making of requests at specific routes and triggers controllers and middlewares.
  */
 
-// create an instance of ProductController class, Because we cannot call the method directly at it
-const productController = new ProductController(); 
+/** Write Your code Here */
 
-server.get('/', productController.getProducts);
-server.get('/new', productController.getAddForm);
-server.post('/',validateRequest, productController.addnewProduct);
-server.get('/update-product/:id', productController.getUpdateProductView );
-server.post('/delete-product/:id',productController.deleteProduct) ;
-server.post('/update-product',validateRequest, productController.postUpdateProduct);
+
+
+
+
+
+
+/** If we import a function , we can use it exaclty by its name irrespective of default or named import.
+ *  If we import class , we have to create an instance for it to use its properties and methods.
+ *     example: - In this ProductController() is class = > const productController = new ProductController(); 
+ * 
+ *  But if class has "static" properties , then we can use them without creating instance.
+ */
+
+/** This is the way a request look like
+ * 
+ *  server.get('/route',middlewares, controller functions) = You can also specify array of middle-wares
+ *  server.get('/update-product/:id', productController.getUpdateProductView );
+ */
 /********************************************************************************************************* */
 /**
  * Step-4

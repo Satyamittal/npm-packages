@@ -1,6 +1,6 @@
 {
   "name": "punk01",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "This is my first npm package. This is used to simplify process of making web-development",
   "main": "server.js",
   "type": "module",
