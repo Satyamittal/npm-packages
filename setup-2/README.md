@@ -6,7 +6,7 @@
 
 - #### To download this package use following command. After installation , go to `node_modules` > `backflow`.
 - #### Cut all files from backflow and paste in folder where, you want them.
-- #### After that , make two more files `.env` & `.gitignore`.
+- #### After that , make two more files `.gitignore`.
 
 ```bash
 npm i backflow
