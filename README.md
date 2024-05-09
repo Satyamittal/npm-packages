@@ -1,7 +1,7 @@
 
 # Setup Folders and files
 
-All my setup files and folders are placed here
+Setup files and folders are here...
 
 
 ## Commands
@@ -11,4 +11,11 @@ All my setup files and folders are placed here
 ```bash
   npm install punk01
 ```
+
+- **Setup-2**: It gives complete backend structure of the website. To install this setup in your computer use following command.
+
+```bash
+  npm install backflow
+```
+
 
