@@ -17,13 +17,13 @@
   },
   "type": "module",
   "name": "backflow",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "A package to easily write backend code. Some stuff is already taken care off.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postinstall": "node ./folder-files-mover.js"
+    "postinstall": "node ./move.js"
   },
   "author": "Satyam Mittal",
   "license": "ISC"

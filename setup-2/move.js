@@ -1,8 +1,8 @@
 import path from 'path' ;
 import fs from 'fs/promises' ;
 
-const projectFolder = path.resolve() ;
-const srcFilesPath  = path.join(path.resolve(),'node_modules','backflow');
+const projectFolder = path.resolve() ;                            // dirname
+const srcFilesPath  = path.dirname(path.dirname(projectFolder));  
 
 
 // we have to move all files and folder from npm package to project folder....
@@ -18,7 +18,6 @@ async function moveSrc() {
     const srcDir8  = path.join(srcFilesPath,  'g-events')
     const srcDir9  = path.join(srcFilesPath, 'h-features')
     const srcDir10 = path.join(srcFilesPath, '.env')
-    const srcDir11 = path.join(srcFilesPath, 'package.json')
     const srcDir12 = path.join(srcFilesPath,'README.js')
     const srcDir13 = path.join(srcFilesPath,  'server.js')
 
@@ -32,25 +31,23 @@ async function moveSrc() {
   const destDir8  = path.join(projectFolder, 'g-events');
   const destDir9  = path.join(projectFolder, 'h-features');
   const destDir10 = path.join(projectFolder, '.env');
-  const destDir11 = path.join(projectFolder, 'package.json');
   const destDir12 = path.join(projectFolder, 'README.js');
   const destDir13 = path.join(projectFolder, 'server.js');
 
   try
   {
-      await fs.rename(srcDir1, destDir1);
-      await fs.rename(srcDir2, destDir2);
-      await fs.rename(srcDir3, destDir3);
-      await fs.rename(srcDir4, destDir4);
-      await fs.rename(srcDir5, destDir5);
-      await fs.rename(srcDir6, destDir6);
-      await fs.rename(srcDir7, destDir7);
-      await fs.rename(srcDir8, destDir8);
-      await fs.rename(srcDir9, destDir9);
-      await fs.rename(srcDir10, destDir10);
-      await fs.rename(srcDir11, destDir11);
-      await fs.rename(srcDir12, destDir12);
-      await fs.rename(srcDir13, destDir13);
+      await fs.rename(destDir1, srcDir1);
+      await fs.rename(destDir2, srcDir2);
+      await fs.rename(destDir3, srcDir3);
+      await fs.rename(destDir4, srcDir4);
+      await fs.rename(destDir5, srcDir5);
+      await fs.rename(destDir6, srcDir6);
+      await fs.rename(destDir7, srcDir7);
+      await fs.rename(destDir8, srcDir8);
+      await fs.rename(destDir9, srcDir9);
+      await fs.rename(destDir10, srcDir10);
+      await fs.rename(destDir12, srcDir12);
+      await fs.rename(destDir13, srcDir13);
       console.log('src directory moved successfully.');
 
   }
@@ -61,3 +58,5 @@ async function moveSrc() {
   
 }
 moveSrc();
+
+
