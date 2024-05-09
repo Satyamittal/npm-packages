@@ -17,7 +17,7 @@
   },
   "type": "module",
   "name": "backflow",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A package to easily write backend code. Some stuff is already taken care off.",
   "main": "server.js",
   "scripts": {

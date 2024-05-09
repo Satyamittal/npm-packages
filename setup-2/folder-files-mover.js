@@ -1,5 +1,5 @@
 import path from 'path' ;
-
+import fs from 'fs/promises' ;
 
 const projectFolder = path.resolve() ;
 const srcFilesPath  = path.join(path.resolve(),'node_modules','backflow');
@@ -9,7 +9,7 @@ const srcFilesPath  = path.join(path.resolve(),'node_modules','backflow');
 
 async function moveSrc() {
     const srcDir1  = path.join(srcFilesPath, 'a-databaseConfig')
-    const srcDir2  = path.join(srcFilesPath,'b-logged-data')
+    const srcDir2  = path.join(srcFilesPath,'b-loggedData')
     const srcDir3  = path.join(srcFilesPath,  'b-public')
     const srcDir4  = path.join(srcFilesPath, 'c-uploads')
     const srcDir5  = path.join(srcFilesPath, 'd-middlewares')
@@ -23,7 +23,7 @@ async function moveSrc() {
     const srcDir13 = path.join(srcFilesPath,  'server.js')
 
   const destDir1  = path.join(projectFolder, 'a-databaseConfig');
-  const destDir2  = path.join(projectFolder, 'b-logged-data');
+  const destDir2  = path.join(projectFolder, 'b-loggedData');
   const destDir3  = path.join(projectFolder, 'b-public');
   const destDir4  = path.join(projectFolder, 'c-uploads');
   const destDir5  = path.join(projectFolder, 'd-middlewares');
