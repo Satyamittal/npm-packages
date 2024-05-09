@@ -11,17 +11,19 @@
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.6.1",
+    "mongoose": "^8.3.4",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.13"
   },
   "type": "module",
   "name": "backflow",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A package to easily write backend code. Some stuff is already taken care off.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "node ./folder-files-mover.js"
   },
   "author": "Satyam Mittal",
   "license": "ISC"

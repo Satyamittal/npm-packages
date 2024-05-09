@@ -1,4 +1,5 @@
 import { connectToMongodb } from "./a-databaseConfig/mongodb.js";
+import { connectUsingMongoose } from "./a-databaseConfig/mongoose.js";
 import { server } from "./e-modules/index.js";
 
 // Error handling
@@ -36,4 +37,5 @@ server.listen(3100, ()=>
 {
     console.log("server is listening on port 3100") ;
     // connectToMongodb();
+    // connectUsingMongoose();
 })
